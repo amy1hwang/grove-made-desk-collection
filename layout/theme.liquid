@@ -37,7 +37,9 @@
   {% include 'oldIE-js' %}
 
   {{ '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js' | script_tag }}
+
   {{ 'modernizr.min.js' | asset_url | script_tag }}
+  {{ 'scripts.js' | asset_url | script_tag }}
 
   {% comment %}
     If you store has customer accounts disabled, you can remove the following JS file
@@ -45,7 +47,9 @@
   {% if template contains 'customers' %}
     {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
   {% endif %}
-
+  
+  <script src="https://use.typekit.net/dpy6dzy.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
 
 </head>
@@ -82,16 +86,6 @@
         timber.resetPasswordSuccess();
       });
     {% endif %}
-
-    var swiper = new Swiper('.swiper-container', {
-      pagination: '.swiper-pagination',
-      nextButton: '.swiper-button-next',
-      prevButton: '.swiper-button-prev',
-      slidesPerView: 1,
-      paginationClickable: true,
-      spaceBetween: 30,
-      loop: true
-    });
   </script>
 
 </body>

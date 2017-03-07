@@ -50,6 +50,7 @@ table {
 //variables
 $hdr-gray: #424242;
 $ftr-gray: #4a4d51;
+$din: "din-2014";
 
 //mixin
 @mixin center {
@@ -58,12 +59,21 @@ $ftr-gray: #4a4d51;
   align-items: center;
 }
 
-@mixin wu ($letter-spacing, $size) {
+@mixin wu ($letter-spacing, $size, $weight) {
   color: white;
   text-transform: uppercase;
   letter-spacing: $letter-spacing;
   font-size: $size;
+  font-weight: $weight;
 }
+
+@mixin font-din {
+  font-family: $din;
+}
+.font-din {
+  @include font-din;
+}
+
 
 //general
 body {
@@ -90,15 +100,13 @@ body {
 }
 
 .left {
-  // width: 50%;
   display: flex;
   align-items: center;
   // justify-content: space-between;
   a {
     margin-right: 50px;
-    font-size: 1em;
-    color: white;
     text-decoration: none;
+    @include wu(2px, 1em, 300);
   }
 }
 
@@ -107,15 +115,17 @@ body {
   h1 {
     display: inline-block;
     margin-left: 5px;
-    color: white;
+    @include wu(null, 1.2em, 300);
     text-decoration: none;
-    font-size: 1.2em;
-    font-weight: lighter;
   }
   img {
     width: 25px;
     height: auto;
   }
+}
+
+.arrow-down {
+  width: 12px;
 }
 
 
@@ -139,7 +149,8 @@ body {
       text-decoration: none;
       margin-top: 10px;
       text-align: center;
-      font-size: .9em;
+      @include wu(.5px, .9em, 300);
+      text-transform: none;
       color: black;
     }
   }
@@ -158,13 +169,13 @@ body {
   height: 113px;
   border-left: 1px solid black;
   h3 {
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    @include wu(2px, 1em, 400);
+    color: black;
   }
 }
 
 //index
-.container-container {
+.container {
   width: 100vw;
   height: 808px;
   position: relative;
@@ -176,10 +187,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 3.5em;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 11px;
+  @include wu(12px, 3.6em, 400);
 }
 
 .swiper-container {
@@ -227,18 +235,26 @@ body {
   margin-right: 0;
 }
 
+.swiper-pagination-bullet-active {
+  background: white;
+}
+
 .main-products {
   width: 100%;
   height: 920px;
   text-align: center;
   h1 {
-    margin-top: 112px;
+    margin-top: 80px;
     margin-bottom: 24px;
     font-size: 3em;
   }
   h3 {
     font-size: 1.2em;
     margin-bottom: 60px;
+  }
+  img {
+    width: 950px;
+    height: auto;
   }
 }
 
@@ -256,7 +272,7 @@ body {
   align-items: center;
   h6 {
     margin-top: 5px;
-    @include wu(0.17px, 11px);
+    @include wu(0.17px, 11px, 300);
   }
 }
 .subscription {
@@ -291,7 +307,7 @@ body {
     color: white;
     width: 110px;
     height: 36px;
-    @include wu(0, .8em);
+    @include wu(.8px, .8em, 300);
     &:focus, &:active {
       outline: none;
       border: none;
@@ -343,8 +359,7 @@ body {
     font-size: .8em;
   }
   img {
-    margin-left: 15px;
+    margin-left: 10px;
     width: 50px;
   }
 }
-//change <> and pagination color
