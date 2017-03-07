@@ -1,0 +1,350 @@
+//reset
+* {
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+//variables
+$hdr-gray: #424242;
+$ftr-gray: #4a4d51;
+
+//mixin
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin wu ($letter-spacing, $size) {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing;
+  font-size: $size;
+}
+
+//general
+body {
+  font-family: sans-serif;
+  font-weight: lighter;
+}
+
+
+//navbar-header
+.header {
+  background: $hdr-gray;
+  height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+  box-shadow: 0 -2 15 1;
+}
+
+.dc-logo {
+  width: 281px;
+  height: auto;
+  margin-right: 50px;
+}
+
+.left {
+  // width: 50%;
+  display: flex;
+  align-items: center;
+  // justify-content: space-between;
+  a {
+    margin-right: 50px;
+    font-size: 1em;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.cart{
+  width: 50px;
+  h1 {
+    display: inline-block;
+    margin-left: 5px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: lighter;
+  }
+  img {
+    width: 25px;
+    height: auto;
+  }
+}
+
+
+//navbar-superbar
+.superbar {
+  width: 100vw;
+  height: 178px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.products {
+  padding: 0 106px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100vw - 368px);
+  a {
+    text-decoration: none;
+    h4 {
+      text-decoration: none;
+      margin-top: 10px;
+      text-align: center;
+      font-size: .9em;
+      color: black;
+    }
+  }
+}
+
+.sb-img {
+  width: 150px;
+  height: 88px;
+  display: flex;
+  align-items: center;
+}
+
+.shop-all {
+  @include center;
+  width: 368px;
+  height: 113px;
+  border-left: 1px solid black;
+  h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+}
+
+//index
+.container-container {
+  width: 100vw;
+  height: 808px;
+  position: relative;
+}
+
+.text-on-slide {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3.5em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 11px;
+}
+
+.swiper-container {
+  width: 100vw;
+}
+#slide1 {
+  height: 808px;
+  background: url("{{ 'dc1.jpg' | asset_url }}");
+  background-position: center;
+  background-size: cover;
+  margin-right: 0;
+}
+#slide2 {
+  height: 808px;
+  background: url("{{ 'dc2.jpg' | asset_url }}");
+  background-position: center;
+  background-size: cover;
+  margin-right: 0;
+}
+#slide3 {
+  height: 808px;
+  background: url("{{ 'dc3.jpg' | asset_url }}");
+  background-position: center;
+  background-size: cover;
+  margin-right: 0;
+}
+#slide4 {
+  height: 808px;
+  background: url("{{ 'dc4.jpg' | asset_url }}");
+  background-position: center;
+  background-size: cover;
+  margin-right: 0;
+}
+#slide5 {
+  height: 808px;
+  background: url("{{ 'dc5.jpg' | asset_url }}");
+  background-position: center;
+  background-size: cover;
+  margin-right: 0;
+}
+
+.swiper-slide .swiper-slide-duplicate .swiper-slide-prev {
+  width: 100%;
+  height: 808px;
+  margin-right: 0;
+}
+
+.main-products {
+  width: 100%;
+  height: 920px;
+  text-align: center;
+  h1 {
+    margin-top: 112px;
+    margin-bottom: 24px;
+    font-size: 3em;
+  }
+  h3 {
+    font-size: 1.2em;
+    margin-bottom: 60px;
+  }
+}
+
+
+//footer
+.footer {
+  width: 100wv;
+  height: 381px;
+  background: $ftr-gray;
+  padding-top: 29px;
+}
+.to-the-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h6 {
+    margin-top: 5px;
+    @include wu(0.17px, 11px);
+  }
+}
+.subscription {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .subscription-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  input {
+    background: none;
+    width: 347px;
+    height: 36px;
+    border: none;
+    border-bottom: 2px solid white;
+    font-size: 1em;
+    outline: none;
+    color: white;
+    &:focus, &:active {
+      outline: none;
+      border: none;
+      border-bottom: 2px solid white;
+    }
+  }
+  button {
+    margin-left: -5px;
+    border: 2px solid white;
+    background: none;
+    color: white;
+    width: 110px;
+    height: 36px;
+    @include wu(0, .8em);
+    &:focus, &:active {
+      outline: none;
+      border: none;
+      border-bottom: 2px solid white;
+    }
+  }
+  h6 {
+    margin-top: 10px;
+    font-size: .8em;
+    color: white;
+    letter-spacing: .4px;
+  }
+}
+.follow-us {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.follow-us-img {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  img {
+    margin: 12px;
+    width: 30px;
+  }
+}
+
+.bottom {
+  margin-top: 30px;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.b-left {
+  li {
+    font-size: .8em;
+    color: white;
+    display: inline-block;
+    margin-right: 20px;
+  }
+}
+.b-right {
+  h6 {
+    color: white;
+    font-size: .8em;
+  }
+  img {
+    margin-left: 15px;
+    width: 50px;
+  }
+}
+//change <> and pagination color
