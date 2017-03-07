@@ -84,6 +84,7 @@ body {
 
 //navbar-header
 .header {
+  z-index: 3;
   background: $hdr-gray;
   height: 92px;
   display: flex;
@@ -128,14 +129,25 @@ body {
   width: 12px;
 }
 
+.fixed {
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100vw;
+}
 
 //navbar-superbar
 .superbar {
+  background: white;
+  z-index: 2;
   width: 100vw;
   height: 178px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  display: none;
+  position: absolute;
+  top: 92px;
 }
 .products {
   padding: 0 106px;
@@ -172,6 +184,13 @@ body {
     @include wu(2px, 1em, 400);
     color: black;
   }
+}
+
+.sup-fixed {
+  position: fixed;
+  top: 92px;
+  left:0;
+  width: 100vw;
 }
 
 //index
@@ -270,6 +289,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-decoration: none;
   h6 {
     margin-top: 5px;
     @include wu(0.17px, 11px, 300);
