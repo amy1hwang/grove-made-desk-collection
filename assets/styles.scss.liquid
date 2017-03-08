@@ -59,6 +59,13 @@ $din: "din-2014";
   align-items: center;
 }
 
+@mixin slideshow {
+  height: 808px;
+  background-position: center;
+  background-size: cover;
+  margin-right: 0;
+}
+
 @mixin wu ($letter-spacing, $size, $weight) {
   color: white;
   text-transform: uppercase;
@@ -74,11 +81,37 @@ $din: "din-2014";
   @include font-din;
 }
 
+@mixin cover {
+    width: 100vw;
+    height: 670px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@mixin cover-text {
+  .text-on-cover {
+    @include wu(20px, 5em, 400);
+    line-height: 60px;
+    margin-bottom: 30px;
+  }
+
+  .text-on-cover-smaller {
+    @include wu(20px, 3em, 400);
+    line-height: 60px;
+  }
+}
+
+
 
 //general
 body {
   font-family: sans-serif;
   font-weight: lighter;
+}
+
+main.main-content {
+  min-height: calc(100vh - 473px);
 }
 
 
@@ -103,11 +136,22 @@ body {
 .left {
   display: flex;
   align-items: center;
-  // justify-content: space-between;
   a {
     margin-right: 50px;
     text-decoration: none;
     @include wu(2px, 1em, 300);
+  }
+}
+
+.cart-container {
+  position: relative;
+  width: 50px;
+  height: 30px;
+  &:hover {
+    .cart-clicked {
+      height: auto;
+      opacity: 1;
+    }
   }
 }
 
@@ -122,6 +166,62 @@ body {
   img {
     width: 25px;
     height: auto;
+  }
+}
+
+.cart-clicked {
+  z-index: 3;
+  width: 424px;
+  position: absolute;
+  top: 58px;
+  right: -25px;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity .5s ease-out;
+}
+
+.cart-header {
+  background: $hdr-gray;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  a {
+    padding-left: 20px;
+    @include wu(5px, 1em, 300);
+    text-decoration: none;
+  }
+}
+.cart-main {
+  background: #F2F2F2;
+  padding: 14px 16px;
+  .added-item {
+    background: white;
+  }
+  .subtotal {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1em;
+    font-weight: 300;
+  }
+  .checkout-btn {
+    width: 392px;
+    height: 44px;
+    border: none;
+    border-radius: 0;
+    background: $hdr-gray;
+    margin: 14px 0;
+    @include wu(12px, 18px, 300);
+    &:hover, &:active, &:focus {
+      outline: none;
+      border: none;
+    }
+  }
+  h4 {
+    @include wu(2.75px, 11px, 200);
+    color: #E76E7D;
   }
 }
 
@@ -148,6 +248,7 @@ body {
   display: none;
   position: absolute;
   top: 92px;
+  box-shadow: 0px 1px 5px #d6d6d6;
 }
 .products {
   padding: 0 106px;
@@ -180,6 +281,10 @@ body {
   width: 368px;
   height: 113px;
   border-left: 1px solid black;
+  a {
+    color: black;
+    text-decoration: none;
+  }
   h3 {
     @include wu(2px, 1em, 400);
     color: black;
@@ -213,39 +318,24 @@ body {
   width: 100vw;
 }
 #slide1 {
-  height: 808px;
+  @include slideshow;
   background: url("{{ 'dc1.jpg' | asset_url }}");
-  background-position: center;
-  background-size: cover;
-  margin-right: 0;
 }
 #slide2 {
-  height: 808px;
+  @include slideshow;
   background: url("{{ 'dc2.jpg' | asset_url }}");
-  background-position: center;
-  background-size: cover;
-  margin-right: 0;
 }
 #slide3 {
-  height: 808px;
+  @include slideshow;
   background: url("{{ 'dc3.jpg' | asset_url }}");
-  background-position: center;
-  background-size: cover;
-  margin-right: 0;
 }
 #slide4 {
-  height: 808px;
+  @include slideshow;
   background: url("{{ 'dc4.jpg' | asset_url }}");
-  background-position: center;
-  background-size: cover;
-  margin-right: 0;
 }
 #slide5 {
-  height: 808px;
+  @include slideshow;
   background: url("{{ 'dc5.jpg' | asset_url }}");
-  background-position: center;
-  background-size: cover;
-  margin-right: 0;
 }
 
 .swiper-slide .swiper-slide-duplicate .swiper-slide-prev {
@@ -277,6 +367,61 @@ body {
   }
 }
 
+
+//shop-all
+.shop-all-cover {
+  @include cover;
+  background: url("{{ 'shop-all-cover.png' | asset_url }}");
+}
+
+@include cover-text;
+.section-header {
+  margin: 60px 80px 0;
+}
+.section-header__left {
+  @include wu(2px, 36px, 300);
+  color: black;
+}
+
+.grid-uniform {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 60px;
+  padding: 10px;
+}
+
+.grid__item {
+  .product-text {
+    opacity: 0;
+    transition: opacity .3s;
+  }
+  &:hover {
+    .product-text {
+      opacity: 1;
+    }
+  }
+}
+//*******how do i change image on hover?
+
+.grid__image, .grid__image img {
+  width: 400px;
+  height: auto;
+}
+
+.product-title, .product-title a {
+  text-decoration: none;
+  text-align: center;
+  @include wu(9px, 18px, 300);
+  color: black;
+  margin-bottom: 10px;
+}
+
+.product-subtitle, .add-to-cart {
+  text-decoration: none;
+  text-align: center;
+  @include wu(3.33px, 12px, 200);
+  color: #9B9B9B;
+}
 
 //footer
 .footer {

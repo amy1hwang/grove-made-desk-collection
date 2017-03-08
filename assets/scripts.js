@@ -12,19 +12,30 @@ $(document).on("click", function () {
     $(".superbar").slideUp();
 });
 
+//cart cart-clicked
+// $(function() {
+//   $('.cart-container').click(function(event) {
+//     event.stopPropagation();
+//     $(".cart-clicked").css('height', 'auto');
+//   });
+//   $(".cart-clicked").on("click", function(event) {
+//     event.stopPropagation();
+//   });
+// })
+// $(document).on("click", function() {
+//   $(".cart-clicked").css('height', '0');
+// })
+
 //fixed header on scroll
-var num = 92;
+var num = 0;
 $(window).bind('scroll', function () {
     if ($(window).scrollTop() > num) {
       $('.header').addClass('fixed');
-    } else {
-      $('.header').removeClass('fixed');
-    };
-    if ($(window).scrollTop() > num) {
       $('.superbar').addClass('sup-fixed');
     } else {
+      $('.header').removeClass('fixed');
       $('.superbar').removeClass('sup-fixed');
-    }
+    };
 });
 
 //sildeshow

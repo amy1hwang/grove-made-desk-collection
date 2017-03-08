@@ -19,9 +19,25 @@
       </a>
     <!-- </div> -->
   </div>
-  <a href="/" class="cart">
-    <img src="{{ 'cart.svg' | asset_url }}" alt="">
-    <!-- {{ 'cart.svg' | asset_url | img_tag }} -->
-    <h1 class="font-din">0</h1>
-  </a>
+  <div class="cart-container">
+    <div class="cart">
+      <img src="{{ 'cart.svg' | asset_url }}" alt="">
+      <!-- {{ 'cart.svg' | asset_url | img_tag }} -->
+      <h1 class="font-din number-of-items">0</h1>
+    </div>
+    <div class="cart-clicked">
+      <div class="cart-header font-din">
+        <a href="/">your cart</a>
+      </div>
+      <div class="cart-main">
+        <div class="added-item"></div>
+        <div class="subtotal">
+          <span class="font-din">subtotal</span><span class="subtotal-amount font-din">$0</span>
+        </div>
+        <button type="button" class="checkout-btn font-din">check out</button>
+        <h4 class="font-din">ORDER OVER $150 SHIP FREE (USA ONLY)</h4>
+      </div>
+    </div>
+  </div>
+
 </nav>
