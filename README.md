@@ -2,7 +2,7 @@
 ## by Amy Hwang | Capstone Project
 
 <br>
-<img src="https://github.com/amy1hwang/grove-made-desk-collection/blob/master/grovemade.png" height=700px>
+<img src="https://github.com/amy1hwang/grove-made-desk-collection/blob/master/grovemade.png">
 <br>
 
 # description of the webpage
