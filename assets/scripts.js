@@ -1,3 +1,4 @@
+console.debug("[Scripts.js]", "Initialized");
 //showing superbar
 $(function(){
   $('.show-superbar').click(function(event){
@@ -40,7 +41,7 @@ $(window).bind('scroll', function () {
 
 //sildeshow
 $(function() {
-  $(".index-swiper").swiper({
+  $("[data-index-swiper]").swiper({
       pagination: '.swiper-pagination',
       nextButton: '.swiper-button-next',
       prevButton: '.swiper-button-prev',
