@@ -300,7 +300,7 @@ main.main-content {
 }
 
 //index
-.container {
+.index-swiper {
   width: 100vw;
   height: 808px;
   position: relative;
@@ -318,24 +318,28 @@ main.main-content {
 .swiper-container {
   width: 100vw;
 }
-#slide1 {
+
+.index-slide {
   @include slideshow;
+}
+
+#slide1 {
   background: url("{{ 'dc1.jpg' | asset_url }}");
 }
+
 #slide2 {
-  @include slideshow;
   background: url("{{ 'dc2.jpg' | asset_url }}");
 }
+
 #slide3 {
-  @include slideshow;
   background: url("{{ 'dc3.jpg' | asset_url }}");
 }
+
 #slide4 {
-  @include slideshow;
   background: url("{{ 'dc4.jpg' | asset_url }}");
 }
+
 #slide5 {
-  @include slideshow;
   background: url("{{ 'dc5.jpg' | asset_url }}");
 }
 
