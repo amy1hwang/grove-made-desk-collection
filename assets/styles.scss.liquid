@@ -59,13 +59,6 @@ $din: "din-2014";
   align-items: center;
 }
 
-@mixin slideshow {
-  height: 808px;
-  background-position: center;
-  background-size: cover;
-  margin-right: 0;
-}
-
 @mixin wu ($letter-spacing, $size, $weight) {
   color: white;
   text-transform: uppercase;
@@ -101,6 +94,36 @@ $din: "din-2014";
     line-height: 60px;
   }
 }
+
+
+// utility classes
+// utility classes
+// utility classes
+// utility classes
+.center {
+  text-align: center;
+}
+
+
+.margin {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.margin--large {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.margin-bottom {
+  margin-bottom: 40px;
+}
+
+// utility classes
+// utility classes
+// utility classes
+// utility classes
+
 
 
 
@@ -300,9 +323,8 @@ main.main-content {
 }
 
 //index
-.container {
+.index-swiper {
   width: 100vw;
-  height: 808px;
   position: relative;
 }
 
@@ -313,30 +335,38 @@ main.main-content {
   left: 50%;
   transform: translate(-50%, -50%);
   @include wu(12px, 3.6em, 400);
+  pointer-events: none;
 }
 
 .swiper-container {
   width: 100vw;
 }
+
+.index-slide {
+  background-position: center;
+  background-size: cover;
+  margin-right: 0;
+  padding-bottom: 40%;
+}
+
 #slide1 {
-  @include slideshow;
-  background: url("{{ 'dc1.jpg' | asset_url }}");
+  background-image: url("{{ 'dc1.jpg' | asset_url }}");
 }
+
 #slide2 {
-  @include slideshow;
-  background: url("{{ 'dc2.jpg' | asset_url }}");
+  background-image: url("{{ 'dc2.jpg' | asset_url }}");
 }
+
 #slide3 {
-  @include slideshow;
-  background: url("{{ 'dc3.jpg' | asset_url }}");
+  background-image: url("{{ 'dc3.jpg' | asset_url }}");
 }
+
 #slide4 {
-  @include slideshow;
-  background: url("{{ 'dc4.jpg' | asset_url }}");
+  background-image: url("{{ 'dc4.jpg' | asset_url }}");
 }
+
 #slide5 {
-  @include slideshow;
-  background: url("{{ 'dc5.jpg' | asset_url }}");
+  background-image: url("{{ 'dc5.jpg' | asset_url }}");
 }
 
 .swiper-slide .swiper-slide-duplicate .swiper-slide-prev {
@@ -528,4 +558,37 @@ main.main-content {
     margin-left: 10px;
     width: 50px;
   }
+}
+
+
+
+// home blocks
+.home-blocks {
+}
+
+.home-blocks__image {
+  padding-bottom: 50%;
+  background: rgba(black, .1);
+}
+
+.home-blocks__text {
+  margin-top: 1em;
+  text-align: center;
+}
+
+
+
+
+// home text
+.home-text {
+  text-align: center;
+}
+
+.home-featured {
+
+}
+
+.home-featured__image {
+  background: rgba(black, .1);
+  padding-bottom: 40%;
 }
