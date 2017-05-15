@@ -1,7 +1,7 @@
 # Grove Made: Desk Collection
 ## by Amy Hwang | Capstone Project
 
-![alt tag](http://grovemade.png)
+![alt tag](https://github.com/amy1hwang/grove-made-desk-collection/blob/master/grovemade.png)
 
 # description of the webpage
 This website is an e-commerce website for Grove Made. It displays specifically products from their desk collection.
