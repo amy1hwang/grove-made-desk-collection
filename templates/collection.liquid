@@ -8,7 +8,7 @@
 
 
 {% if collection.handle == 'all' %}
-  <div class="banner">
+  <div class="banner" style="background-image: url('{{ collection.image | img_url: "1000x" }}')">
 
   </div>
   {% for link in linklists.collections.links %}

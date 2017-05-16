@@ -29,9 +29,9 @@
       <h1>
         Design Inspires What You Do
       </h1>
-      <p>
-        Grovemade is founded in the belief that products should be well-made and built to last. 
-        Across a growing number of categories, Grovemade stands for skill at scale, 
+      <p style="max-width: 500px; margin-left: auto; margin-right: auto;">
+        Grovemade is founded in the belief that products should be well-made and built to last.
+        Across a growing number of categories, Grovemade stands for skill at scale,
         the preservation of craft, and the beauty of industry.
       </p>
     </div>
@@ -43,8 +43,9 @@
 <div class="container home-blocks margin">
   <div class="row">
     <div class=" col-xs-4 home-blocks__item">
-      <div class="home-blocks__image">
-
+      <div class="home-blocks__image home-blocks__design" style="background-image: url('{{ 'design.jpg' | asset_url }}');">
+        <div class="home-blocks__image-hover" style="background-image: url('{{ 'design-hover.jpg' | asset_url }}');">
+        </div>
       </div>
       <div class="home-blocks__text">
         <h3>
@@ -57,8 +58,9 @@
       </div>
     </div>
     <div class=" col-xs-4 home-blocks__item">
-      <div class="home-blocks__image">
-
+      <div class="home-blocks__image home-blocks__ergonomics" style="background-image: url('{{ 'ergonomics.jpg' | asset_url }}');">
+        <div class="home-blocks__image-hover" style="background-image: url('{{ 'ergonomics-hover.jpg' | asset_url }}');">
+        </div>
       </div>
       <div class="home-blocks__text">
         <h3>
@@ -70,8 +72,9 @@
       </div>
     </div>
     <div class="col-xs-4 home-blocks__item">
-      <div class="home-blocks__image">
-
+      <div class="home-blocks__image home-blocks__function" style="background-image: url('{{ 'function.jpg' | asset_url }}');">
+        <div class="home-blocks__image-hover" style="background-image: url('{{ 'function-hover.jpg' | asset_url }}');">
+        </div>
       </div>
       <div class="home-blocks__text">
         <h3>
@@ -87,6 +90,23 @@
 </div>
 
 
+<div class="home-text container margin--large">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>
+        Our collections
+      </h1>
+      <p style="max-width: 500px; margin-left: auto; margin-right: auto;">
+        Grovemade is founded in the belief that products should be well-made and built to last.
+        Across a growing number of categories, Grovemade stands for skill at scale,
+        the preservation of craft, and the beauty of industry.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
 <div class="container home-featured margin center">
   <div class="row">
     <div class="col-xs-12">
@@ -95,14 +115,14 @@
       </h3>
     </div>
     <div class="col-xs-6">
-      <div class="home-featured__image">
+      <div class="home-featured__image" style="background-image: url('{{ 'feature-stand.jpg' | asset_url }}')">
       </div>
       <a href="/collections/all">
         Shop All
       </a>
     </div>
     <div class="col-xs-6">
-      <div class="home-featured__image">
+      <div class="home-featured__image second-feature" style="background-image: url('{{ 'feature-speaker.jpg' | asset_url }}')">
       </div>
       <a href="/collections/all">
         Shop All
@@ -111,7 +131,7 @@
   </div>
 </div>
 
-<!-- 
+<!--
 <div class="main-products">
   <h1 class="font-din">Monitor Stands</h1>
   <h3 class="font-din">Elevate your screen</h3>
