@@ -1,4 +1,5 @@
 console.debug("[Scripts.js]", "Initialized");
+
 //showing superbar
 $(function(){
   $('.show-superbar').click(function(event){
@@ -67,3 +68,5 @@ $(function() {
     }, 800);
   });
 });
+
+
