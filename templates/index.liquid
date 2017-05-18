@@ -3,22 +3,56 @@
     <div class="swiper-wrapper">
       <div class="swiper-slide index-slide" id="slide1">
         <div class="index-slide__content">
-<!--           <h1>
-            This is my title
+          <h1 class="font-din">
+            Desk Collections
           </h1>
-          <p>
-          </p> -->
+          <p class="font-din">
+            here's our product. bye
+          </p>
+          <button type="button" class="shop-button font-din">Shop All</button>
         </div>
       </div>
-      <div class="swiper-slide index-slide" id="slide2"></div>
-      <div class="swiper-slide index-slide" id="slide3"></div>
-      <div class="swiper-slide index-slide" id="slide4"></div>
-      <div class="swiper-slide index-slide" id="slide5"></div>
+      <div class="swiper-slide index-slide" id="slide2">
+        <div class="index-slide__content">
+          <h1 class="font-din">
+            Elevate Your Screen
+          </h1>
+          <button type="button" class="shop-button font-din">Shop Stands & Dock</button>
+        </div>
+      </div>
+      <div class="swiper-slide index-slide" id="slide3">
+        <div class="index-slide__content">
+          <h1 class="font-din">
+            Tranform Your Workplace
+          </h1>
+          <button type="button" class="shop-button font-din">Shop Desk Accessories</button>
+        </div>
+      </div>
+      <div class="swiper-slide index-slide" id="slide4">
+        <div class="index-slide__content">
+          <h1 class="font-din">
+            Acoustically Driven Design
+          </h1>
+          <button type="button" class="shop-button font-din">Shop Wood Speakers</button>
+        </div>
+      </div>
+      <div class="swiper-slide index-slide" id="slide5">
+        <div class="index-slide__content">
+          <h1 class="font-din">
+            Natually Durable Material
+          </h1>
+          <p class="font-din">
+            here's our product. bye
+          </p>
+          <button type="button" class="shop-button font-din">Shop All</button>
+        </div>
+      </div>
     </div>
-    <div class="swiper-pagination"></div>
+    <div class="swiper-pagination">
+    </div>
 
   </div>
-  <h1 class="text-on-slide font-din">Desk Collection</h1>
+  <!-- <h1 class="text-on-slide font-din">Desk Collection</h1> -->
 </div>
 
 
@@ -26,10 +60,10 @@
 <div class="home-text container margin--large">
   <div class="row">
     <div class="col-xs-12">
-      <h1>
+      <h1 class="font-din">
         Design Inspires What You Do
       </h1>
-      <p style="max-width: 500px; margin-left: auto; margin-right: auto;">
+      <p style="max-width: 500px; margin-left: auto; margin-right: auto;" class="font-georgia">
         Grovemade is founded in the belief that products should be well-made and built to last.
         Across a growing number of categories, Grovemade stands for skill at scale,
         the preservation of craft, and the beauty of industry.
@@ -48,12 +82,11 @@
         </div>
       </div>
       <div class="home-blocks__text">
-        <h3>
+        <h3 class="font-din">
           Design
         </h3>
-        <p>
+        <p class="font-georgia">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-
         </p>
       </div>
     </div>
@@ -63,10 +96,10 @@
         </div>
       </div>
       <div class="home-blocks__text">
-        <h3>
+        <h3 class="font-din">
           Ergonomics
         </h3>
-        <p>
+        <p class="font-georgia">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         </p>
       </div>
@@ -77,12 +110,11 @@
         </div>
       </div>
       <div class="home-blocks__text">
-        <h3>
+        <h3 class="font-din">
           Function
         </h3>
-        <p>
+        <p class="font-georgia">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-
         </p>
       </div>
     </div>
@@ -93,10 +125,10 @@
 <div class="home-text container margin--large">
   <div class="row">
     <div class="col-xs-12">
-      <h1>
+      <h1 class="font-din">
         Our collections
       </h1>
-      <p style="max-width: 500px; margin-left: auto; margin-right: auto;">
+      <p style="max-width: 500px; margin-left: auto; margin-right: auto;" class="font-georgia">
         Grovemade is founded in the belief that products should be well-made and built to last.
         Across a growing number of categories, Grovemade stands for skill at scale,
         the preservation of craft, and the beauty of industry.
@@ -110,23 +142,20 @@
 <div class="container home-featured margin center">
   <div class="row">
     <div class="col-xs-12">
-      <h3>
+      <!-- <h3>
         Featured Products
-      </h3>
+      </h3> -->
     </div>
     <div class="col-xs-6">
       <div class="home-featured__image" style="background-image: url('{{ 'feature-stand.jpg' | asset_url }}')">
       </div>
-      <a href="/collections/all">
-        Shop All
-      </a>
+      <button type="button" href="/collections/all" class="shop-button font-din">Shop Stands & Dock</button>
+
     </div>
     <div class="col-xs-6">
       <div class="home-featured__image second-feature" style="background-image: url('{{ 'feature-speaker.jpg' | asset_url }}')">
       </div>
-      <a href="/collections/all">
-        Shop All
-      </a>
+      <button type="button" href="/collections/all" class="shop-button font-din">Shop Speakers & Amp</button>
     </div>
   </div>
 </div>

@@ -69,9 +69,18 @@ $din: "din-2014";
 
 @mixin font-din {
   font-family: $din;
+  color: $hdr-gray;
 }
 .font-din {
   @include font-din;
+}
+
+@mixin font-georgia {
+  font-family: georgia;
+  color: $hdr-gray;
+}
+.font-georgia {
+  @include font-georgia;
 }
 
 @mixin cover {
@@ -351,10 +360,42 @@ main.main-content {
   background-size: cover;
   margin-right: 0;
   padding-bottom: 40%;
+  position: relative;
   &.swiper-slide-active {
     // slide text here.
   }
 }
+.index-slide__content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    color: white;
+    font-size: 4em;
+  }
+  button {
+    margin-top: 50px;
+    border: 2px solid white;
+    background: none;
+    width: 200px;
+    height: 36px;
+    @include wu(.8px, 1em, 300);
+    transition: all .2s ease-in-out;
+    &:hover, &:focus, &:active {
+      outline: none;
+      background: white;
+      color: $ftr-gray;
+      border-bottom: 2px solid white;
+    }
+  }
+}
+
 
 #slide1 {
   background-image: url("{{ 'dc1.jpg' | asset_url }}");
@@ -440,18 +481,18 @@ main.main-content {
   height: auto;
 }
 
-.product-title, .product-title a {
-  text-decoration: none;
+.product-title, .product-price {
   text-align: center;
-  @include wu(9px, 18px, 300);
+  @include wu(3px, 12px, 300);
   color: black;
   margin-bottom: 10px;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
 }
 
 .product-subtitle, .add-to-cart {
   text-decoration: none;
   text-align: center;
-  @include wu(3.33px, 12px, 200);
   color: #9B9B9B;
 }
 
@@ -467,6 +508,11 @@ main.main-content {
   flex-direction: column;
   align-items: center;
   text-decoration: none;
+  img, h6 {
+    &:hover, &:focus, &:active {
+      cursor: pointer;
+    }
+  }
   h6 {
     margin-top: 5px;
     @include wu(0.17px, 11px, 300);
@@ -620,16 +666,33 @@ main.main-content {
 // home text
 .home-text {
   text-align: center;
+  p {
+    font-size: 1.1em;
+  }
 }
 
 .home-featured {
-
+  button {
+    border: 2px solid $ftr-gray;
+    background: none;
+    width: 160px;
+    height: 36px;
+    @include wu(.8px, .8em, 300);
+    color: $ftr-gray;
+    transition: all .2s ease-in-out;
+    &:hover {
+      outline: none;
+      background: $ftr-gray;
+      color: white;
+    }
+  }
 }
 
 .home-featured__image {
   background: rgba(black, .1);
   padding-bottom: 50%;
   background-size: cover;
+  margin-bottom: 20px;
 }
 
 .second-feature {
@@ -650,11 +713,40 @@ main.main-content {
   &:nth-child(4n+5) {
     clear: left;
   }
+  &:hover {
+    .product-title, .product-price {
+      opacity: 1;
+    }
+  }
 }
 
+.collection-group {
+  .row:first-of-type {
+    display: flex;
+    align-items: flex-end;
+  }
+  a:hover, a:active, a:focus {
+    text-decoration: none;
+    .collection-group__title, .collection-group__desc {
+      color: lighten($hdr-gray, 20%);
+    }
+  }
+  a:visited {
+    color: inherit;
+  }
+}
 
 .collection-group__title {
   margin-top: 0;
+  transition: color .3s ease-in-out;
+}
+
+.collection-group__desc {
+  transition: color .3s ease-in-out;
+}
+
+.collection-group__list {
+  font-size: 1.2em;
 }
 
 .collection-group__image {
@@ -668,3 +760,6 @@ main.main-content {
 .product-navigation {
   margin-top: 1em;
 }
+
+
+//collection-all

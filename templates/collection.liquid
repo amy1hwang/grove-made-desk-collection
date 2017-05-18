@@ -8,7 +8,7 @@
 
 
 {% if collection.handle == 'all' %}
-  <div class="banner" style="background-image: url('{{ collection.image | img_url: "1000x" }}')">
+  <div class="banner" style="background-image: url('{{ collection.image | img_url: "1100x" }}')">
 
   </div>
   {% for link in linklists.collections.links %}
@@ -20,10 +20,10 @@
   	<div class="container">
   		<div class="row">
   			<div class="col-xs-12">
-  				<h1>
+  				<h1 class="font-din">
   					{{ collection.title }}
 				</h1>
-				<p>
+				<p class="font-georgia">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo

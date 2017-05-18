@@ -4,29 +4,19 @@
 
 <div class="collection-group container margin">
   <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-9">
       <a href="{{ link.url }}">
-        <h2 class="collection-group__title">
+        <h2 class="collection-group__title font-din">
           {{ collection.title }}
         </h2>
-        <p>
+        <p class="collection-group__desc font-georgia">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </a>
     </div>
-    <div class="col-sm-4">
-      <ul>
-        <li>
-          Ergonomics
-        </li>
-        <li>
-          Ergonomics
-        </li>
-        <li>
-          Ergonomics
-        </li>
-      </ul>
+    <div class="col-sm-3">
+      {% include 'collection-bullets' %}
     </div>
   </div>
   <!-- /row -->
@@ -45,6 +35,8 @@
       ">
         <a href="{{ product.url | within: collection }}">
           <img class="collection-group__image" src="{{ product.featured_image | img_url: '500x' }}" />
+          <p class="font-din product-title">{{ product.title }}</p>
+          <p class="font-din product-price">{{ product.price | money }}</p>
         </a>
       </div>
     {% endfor %}
