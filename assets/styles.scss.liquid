@@ -3,6 +3,10 @@
   box-sizing: border-box;
 }
 
+li {
+  list-style: none;
+}
+
 //variables
 $hdr-gray: #424242;
 $ftr-gray: #4a4d51;
@@ -173,10 +177,12 @@ main.main-content {
 .navbar-cart {
   cursor: pointer;
   width: 50px;
+  margin-top: -10px;
   h1 {
     display: inline-block;
     margin-left: 5px;
     @include wu(null, 1.2em, 300);
+    color: $ftr-gray;
     text-decoration: none;
   }
   img {
@@ -755,11 +761,20 @@ main.main-content {
 }
 
 .collection-group__desc {
+  font-size: 1.1em;
+  line-height: 2em;
   transition: color .3s ease-in-out;
 }
 
 .collection-group__list {
-  font-size: 1.2em;
+  li {
+    font-size: 1.2em;
+    color: lighten($hdr-gray, 50%);
+    transition: color .3s ease-in-out;
+    &:hover {
+      color: $hdr-gray
+    }
+  }
 }
 
 .product {

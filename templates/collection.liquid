@@ -32,7 +32,7 @@
   {% if collection.handle == 'desk' %}
     <!-- This is the desk hard coded content! -->
   {% endif %}
-  <div class="video-wrapper">  
+  <div class="video-wrapper">
     <div class="video-container">
       {% include 'collection-video' %}
     </div>
@@ -44,10 +44,10 @@
         {% assign title_lower = collection.title | downcase %}
         <div class="
           collection-image
-          {% if title_lower contains 'stands' %}
-            col-xs-4
-          {% else %}
+          {% if title_lower contains 'accessories' %}
             col-xs-3
+          {% else %}
+            col-xs-4
           {% endif %}
         ">
           <a class="product" href="{{ product.url | within: collection }}">
