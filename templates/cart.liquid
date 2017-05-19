@@ -12,7 +12,7 @@
 <div class="col-xs-12">
 {% if cart.item_count > 0 %}
   
-  <h1 class="font-din">CART</h1>
+  <h1 class="font-din">MY CART</h1>
   <form action="/cart" method="post" novalidate class="cart table-wrap">
     <table class="cart-table full table--responsive">
       <thead class="cart__row cart__header-labels">
@@ -99,10 +99,10 @@
         {% endfor %}
       </tbody>
     </table>
-    <div class="grid cart__row">
+    <div class="grid cart__row cart__actions">
       {% if settings.cart_notes_enable %}
         <div class="grid__item two-thirds small--one-whole">
-          <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
+          <label for="CartSpecialInstructions" class="cart-special">{{ 'cart.general.note' | t }}</label>
           <textarea name="note" class="input-full cart__textarea" id="CartSpecialInstructions">{{ cart.note }}</textarea>
         </div>
       {% endif %}
