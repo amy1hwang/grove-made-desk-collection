@@ -1,34 +1,38 @@
 <nav class="header">
-  <div class="left">
-    <a class="logo" href="/">
-      <img class="navbarlogo" src="{{ 'dclogo.svg' | asset_url }}" alt="">
-      <img class="fixedbarlogo" src="{{ 'fixedbarlogo.png' | asset_url }}" alt="">
-    </a>
-      <a class="font-din show-superbar nav-item">
-        View Collection
-        <img src="{{ 'v.svg' | asset_url}}" alt="" class="arrow-down">
-      </a>
-      <a class="font-din nav-item">
-        About
-      </a>
-  </div>
-  <div class="cart-container">
-    <div class="navbar-cart" onclick="window.location = '/cart/';">
-      <img src="{{ 'cart.svg' | asset_url }}" alt="">
-      <!-- {{ 'cart.svg' | asset_url | img_tag }} -->
-      <h1 class="font-din number-of-items">0</h1>
-    </div>
-    <div class="cart-clicked">
-      <div class="cart-header font-din">
-        <a href="/">your cart</a>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-8">
+        <a class="logo" href="/">
+          <img class="navbarlogo" src="{{ 'dclogo.svg' | asset_url }}" alt="">
+          <img class="fixedbarlogo" src="{{ 'fixedbarlogo.svg' | asset_url }}" alt="">
+        </a>
+          <a class="font-din show-superbar nav-item">
+            View Collection
+            <img src="{{ 'v.svg' | asset_url}}" alt="" class="arrow-down">
+          </a>
+          <a class="font-din nav-item">
+            About
+          </a>
       </div>
-      <div class="cart-main">
-        <div class="added-item"></div>
-        <div class="subtotal">
-          <span class="font-din">subtotal</span><span class="subtotal-amount font-din">$0</span>
+      <div class="cart-container col-xs-4">
+        <div class="navbar-cart" onclick="window.location = '/cart/';">
+          <img src="{{ 'cart.svg' | asset_url }}" alt="">
+          <!-- {{ 'cart.svg' | asset_url | img_tag }} -->
+          <h1 class="font-din number-of-items">0</h1>
         </div>
-        <button type="button" class="checkout-btn font-din">check out</button>
-        <h4 class="font-din">ORDER OVER $150 SHIP FREE (USA ONLY)</h4>
+        <div class="cart-clicked">
+          <div class="cart-header font-din">
+            <a href="/">your cart</a>
+          </div>
+          <div class="cart-main">
+            <div class="added-item"></div>
+            <div class="subtotal">
+              <span class="font-din">subtotal</span><span class="subtotal-amount font-din">$0</span>
+            </div>
+            <button type="button" class="checkout-btn font-din">check out</button>
+            <h4 class="font-din">ORDER OVER $150 SHIP FREE (USA ONLY)</h4>
+          </div>
+        </div>
       </div>
     </div>
   </div>
