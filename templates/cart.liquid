@@ -11,7 +11,7 @@
 <div class="row">
 <div class="col-xs-12">
 {% if cart.item_count > 0 %}
-  
+
   <h1 class="font-din">MY CART</h1>
   <form action="/cart" method="post" novalidate class="cart table-wrap">
     <table class="cart-table full table--responsive">
@@ -129,9 +129,9 @@
   {% comment %}
     The cart is empty
   {% endcomment %}
-  <h2>{{ 'cart.general.title' | t }}</h2>
-  <p>{{ 'cart.general.empty' | t }}</p>
-  <p>{{ 'cart.general.continue_browsing_html' | t }}</p>
+  <h2 class="empty-title font-din">{{ 'cart.general.title' | t }}</h2>
+  <p class="empty font-din ">{{ 'cart.general.empty' | t }}</p>
+  <p class="empty font-din">{{ 'cart.general.continue_browsing_html' | t }}</p>
 {% endif %}
 </div>
 </div>

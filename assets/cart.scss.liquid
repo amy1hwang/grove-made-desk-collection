@@ -881,7 +881,7 @@ $colorBorder: #eee;
   }
 }
 
-// 
+//
 .breadcrumb {
   background: white;
   border-bottom: 1px solid #eee;
@@ -941,6 +941,24 @@ $colorBorder: #eee;
   }
   p {
     max-width: 700px; margin: 0 auto;
+  }
+}
+
+.empty-title {
+  margin: 50px auto 30px;
+}
+
+.empty {
+  margin: auto;
+  font-weight: 500;
+  font-size: 1.5em;
+  color: lighten($ftr-gray, 20%);
+  a {
+    color: lighten($ftr-gray, 30%);
+    &:hover {
+      color: $ftr-gray;
+      text-decoration: none;
+    }
   }
 }
 
