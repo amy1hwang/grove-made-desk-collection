@@ -1,22 +1,16 @@
 <nav class="header">
   <div class="left">
-    <a class="font-din" href="/" class="dc-logo">
-      <img src="{{ 'dclogo.svg' | asset_url }}" alt="">
-      <!-- {{ 'dclogo.svg' | asset_url | img_tag }} -->
+    <a class="logo" href="/">
+      <img class="navbarlogo" src="{{ 'dclogo.svg' | asset_url }}" alt="">
+      <img class="fixedbarlogo" src="{{ 'fixedbarlogo.png' | asset_url }}" alt="">
     </a>
-    <!-- <div class="menu"> -->
-      <a class="font-din show-superbar">
+      <a class="font-din show-superbar nav-item">
         View Collection
         <img src="{{ 'v.svg' | asset_url}}" alt="" class="arrow-down">
       </a>
-      <a class="font-din show-superbar">
-        Designing Desk Collection
-        <img src="{{ 'v.svg' | asset_url}}" alt="" class="arrow-down">
+      <a class="font-din nav-item">
+        About
       </a>
-      <a class="font-din" href="/">
-        Customer Collections
-      </a>
-    <!-- </div> -->
   </div>
   <div class="cart-container">
     <div class="cart" onclick="window.location = '/cart/';">

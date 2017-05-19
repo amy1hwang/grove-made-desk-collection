@@ -15,7 +15,7 @@ $(document).on("click", function () {
 });
 
 //fixed header on scroll
-var num = 0;
+var num = 40;
 $(window).bind('scroll', function () {
     if ($(window).scrollTop() > num) {
       $('.header').addClass('fixed');

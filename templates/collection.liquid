@@ -7,10 +7,9 @@
 {% endcomment %}
 
 
-{% if collection.handle == 'all' %}
   <div class="banner" style="background-image: url('{{ collection.image | img_url: "1100x" }}')">
-
   </div>
+{% if collection.handle == 'all' %}
   {% for link in linklists.collections.links %}
     {% assign collection = link.object %}
     {% include 'collection-single' %}
@@ -20,20 +19,45 @@
   	<div class="container">
   		<div class="row">
   			<div class="col-xs-12">
-  				<h1 class="font-din">
+  				<h1 class="collection-title font-din">
   					{{ collection.title }}
 				</h1>
-				<p class="font-georgia">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				<p class="collection-desc font-georgia">
+					{{ collection.description }}
 				</p>
   			</div>
   		</div>
   	</div>
   </center>
-  {% include 'collection-single' %}
+  {% if collection.handle == 'desk' %}
+    <!-- This is the desk hard coded content! -->
+  {% endif %}
+
+  {% include 'collection-detail' %}
+
+  <div class="collection-group container margin">
+    <div class="row">
+      {% for product in collection.products %}
+        {% assign title_lower = collection.title | downcase %}
+        <div class="
+          collection-image
+          {% if title_lower contains 'stands' %}
+            col-xs-4
+          {% else %}
+            col-xs-3
+          {% endif %}
+        ">
+          <a class="product" href="{{ product.url | within: collection }}">
+            <img class="collection-group__image" src="{{ product.images[0] | img_url: '500x' }}" />
+            <div class="collection-group__image-hover">
+              <img src="{{ product.images[1] | img_url: '500x' }}" />
+            </div>
+            <p class="font-din product-title">{{ product.title }}</p>
+            <p class="font-din product-price">{{ product.price | money }}</p>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
 {% endif %}
