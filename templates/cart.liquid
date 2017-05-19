@@ -7,9 +7,12 @@
 
 {% endcomment %}
 
+<div class="container">
+<div class="row">
+<div class="col-xs-12">
 {% if cart.item_count > 0 %}
-
-  <h1>{{ 'cart.general.title' | t }}</h1>
+  
+  <h1 class="font-din">CART</h1>
   <form action="/cart" method="post" novalidate class="cart table-wrap">
     <table class="cart-table full table--responsive">
       <thead class="cart__row cart__header-labels">
@@ -79,7 +82,7 @@
               </span>
             </td>
             <td data-label="{{ 'cart.label.quantity' | t }}">
-              <input type="number" name="updates[]" id="updates_{{ item.key }}" data-id="{{ item.key }}" value="{{ item.quantity }}" min="0">
+              <input type="number" name="updates[]" id="updates_{{ item.key }}" data-id="{{ item.key }}" value="{{ item.quantity }}" min="0" class="quantity">
             </td>
             <td data-label="{{ 'cart.label.total' | t }}" class="text-right">
               {% if item.original_line_price != item.line_price %}
@@ -100,7 +103,7 @@
       {% if settings.cart_notes_enable %}
         <div class="grid__item two-thirds small--one-whole">
           <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
-          <textarea name="note" class="input-full" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+          <textarea name="note" class="input-full cart__textarea" id="CartSpecialInstructions">{{ cart.note }}</textarea>
         </div>
       {% endif %}
       <div class="grid__item text-right{% if settings.cart_notes_enable %} one-third small--one-whole{% endif %}">
@@ -115,8 +118,10 @@
           </p>
         {% endif %}
         <p><em>{{ 'cart.general.shipping_at_checkout' | t }}</em></p>
-        <button type="submit" name="update" class="btn--secondary update-cart">{{ 'cart.general.update' | t }}</button>
-        <button type="submit" name="checkout" class="btn">{{ 'cart.general.checkout' | t }}</button>
+        <div class="cart__actions">
+          <button type="submit" name="update" class="style-button update-cart">{{ 'cart.general.update' | t }}</button>
+          <button type="submit" name="checkout" class="style-button style-button--dark">{{ 'cart.general.checkout' | t }}</button>
+        </div>
       </div>
     </div>
   </form>
@@ -128,3 +133,6 @@
   <p>{{ 'cart.general.empty' | t }}</p>
   <p>{{ 'cart.general.continue_browsing_html' | t }}</p>
 {% endif %}
+</div>
+</div>
+</div>
