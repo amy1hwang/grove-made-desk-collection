@@ -32,8 +32,11 @@
   {% if collection.handle == 'desk' %}
     <!-- This is the desk hard coded content! -->
   {% endif %}
-
-  {% include 'collection-detail' %}
+  <div class="video-wrapper">  
+    <div class="video-container">
+      {% include 'collection-video' %}
+    </div>
+  </div>
 
   <div class="collection-group container margin">
     <div class="row">
