@@ -126,20 +126,25 @@ main.main-content {
 .logo {
   margin-right: 30px;
   color: $ftr-gray;
+  text-decoration: none;
+}
+
+.navbarlogo {
+  width: 282px;
+  transition: width .5s ease-in-out;
 }
 
 .fixedbarlogo {
+  transition: all 1s ease-in-out;
   opacity: 0;
 }
 
-// .dc-logo {
-//   width: 281px;
-//   height: auto;
-//   margin-right: 50px;
-// }
+
 
 .nav-item {
-  margin-left: 20px;
+  &:last-of-type {
+    margin-left: 60px;
+  }
   @include wu(2px, 1em, 500);
   color: $ftr-gray;
   cursor: pointer;
@@ -152,16 +157,6 @@ main.main-content {
     color: $ftr-gray;
   }
 }
-// .left {
-//   display: flex;
-//   align-items: center;
-//   a {
-//     margin-right: 50px;
-//     text-decoration: none;
-//     @include wu(2px, 1em, 300);
-//     text-transform: none;
-//   }
-// }
 
 .cart-container {
   position: relative;
@@ -262,7 +257,10 @@ main.main-content {
     opacity: 1;
     float: left;
     cursor: pointer;
-    // width: 100%;
+  }
+  .nav-item {
+    display: inline-block;
+    margin-top: 5px;
   }
 }
 
@@ -365,6 +363,7 @@ main.main-content {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgba(black, 0.3);
   h1 {
     color: white;
     font-size: 4em;
@@ -376,19 +375,21 @@ main.main-content {
     font-size: 1.4em;
   }
   button {
-    margin-top: 50px;
+    position: absolute;
+    top: 380px;
+    left: 50%;
+    transform: translateX(-50%);
     border: 2px solid white;
     background: none;
     width: 200px;
     height: 36px;
     line-height: 30px;
+    background: white;
     @include wu(.8px, 1em, 600);
+    color: $ftr-gray;
     transition: all .2s ease-in-out;
     &:hover, &:focus, &:active {
       outline: none;
-      background: white;
-      color: $ftr-gray;
-      border-bottom: 2px solid white;
     }
   }
 }
@@ -674,6 +675,10 @@ main.main-content {
   }
 }
 
+.featured-collections {
+  margin-bottom: 0;
+}
+
 .home-featured {
   button {
     border: 2px solid $ftr-gray;
@@ -821,4 +826,75 @@ main.main-content {
 }
 
 
-//collection-all
+//about
+.about-banner {
+  position: relative;
+  h1 {
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+  }
+  span {
+    text-transform: none;
+    font-size: .7em;
+    font-weight: 400;
+    font-style: italic;
+  }
+}
+.about-container {
+  width: 60%;
+  text-align: center;
+  margin-top: 50px;
+  h1 {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+  }
+
+  p {
+    font-size: 1.1em;
+    color: lighten(black, 40%);
+    line-height: 2em;
+  }
+}
+.about-full-width-image  {
+  padding: 20px 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  img {
+    width: 100%;
+  }
+}
+.about-image-container {
+  padding: 20px 50px;
+}
+.phoneimg-container {
+  padding: 40%;
+  background-size: cover;
+  background-position: center;
+}
+
+.about-button {
+  border: 2px solid $ftr-gray;
+  background: none;
+  width: 200px;
+  height: 36px;
+  line-height: 30px;
+  @include wu(.8px, 1em, 600);
+  color: $ftr-gray;
+  transition: all .2s ease-in-out;
+  &:hover, &:focus, &:active {
+    outline: none;
+    background: $ftr-gray;
+    color: white;
+  }
+}
+
+caption {
+  font-size: .9em;
+  color: lighten(black, 70%);
+}
